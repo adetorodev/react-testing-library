@@ -7,15 +7,24 @@ import { Greet } from './Greet'
 //     expect(textElement).toBeInTheDocument()
 // })
 
-test('Greet renders correctly', () => {
-    render(<Greet />);
-    const textElement = screen.getByText(/hello/i)
-    expect(textElement).toBeInTheDocument()
+// describe('name', () => {}) for grouping test
+// one file is one test suite
 
-})
+describe('Greet', () => {
+    test('Greet renders correctly', () => {
+        render(<Greet />);
+        const textElement = screen.getByText(/hello/i)
+        expect(textElement).toBeInTheDocument()
 
-test('Greet render with name', () => {
-    render(<Greet name='Ezekiel' />);
-    const textElement = screen.getByText('Hello Ezekiel')
-    expect(textElement).toBeInTheDocument()
+    })
+
+    describe('Nested', () => {
+        test('Greet render with name', () => {
+            render(<Greet name='Ezekiel' />);
+            const textElement = screen.getByText('Hello Ezekiel')
+            expect(textElement).toBeInTheDocument()
+        })
+    })
+
+    
 })
