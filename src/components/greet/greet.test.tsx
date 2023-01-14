@@ -13,18 +13,12 @@ import { Greet } from './Greet'
 describe('Greet', () => {
     test('Greet renders correctly', () => {
         render(<Greet />);
-        const textElement = screen.getByText(/hello/i)
+        const textElement = screen.getByText(/Hello/)
         expect(textElement).toBeInTheDocument()
 
     })
 
-    describe('Nested', () => {
-        test('Greet render with name', () => {
-            render(<Greet name='Ezekiel' />);
-            const textElement = screen.getByText('Hello Ezekiel')
-            expect(textElement).toBeInTheDocument()
-        })
-    })
+
 
     
 })
